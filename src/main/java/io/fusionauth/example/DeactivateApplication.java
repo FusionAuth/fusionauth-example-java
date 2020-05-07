@@ -7,26 +7,26 @@ import com.inversoft.rest.ClientResponse;
 
 public class DeactivateApplication {
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 
-		ApplicationProperties.setupProperties();
+        ApplicationProperties.setupProperties();
 
-		// Initiating the client
-		FusionAuthClient client = new FusionAuthClient(ApplicationProperties.getApiKey(),
-				ApplicationProperties.getFusionAuthURL());
+        // Initiating the client
+        FusionAuthClient client = new FusionAuthClient(ApplicationProperties.getApiKey(),
+                ApplicationProperties.getFusionAuthURL());
 
-		UUID appId = UUID.fromString("991001b4-d196-4204-b483-a0ed5dbf7666");
+        UUID appId = UUID.fromString("991001b4-d196-4204-b483-a0ed5dbf7666");
 
-		// Using the returned ClientResponse object
-		ClientResponse<Void, Errors> response = client.deactivateApplication(appId);
+        // Using the returned ClientResponse object
+        ClientResponse<Void, Errors> response = client.deactivateApplication(appId);
 
-		if (response.wasSuccessful()) {
+        if (response.wasSuccessful()) {
 
-			System.out.println("Application deactivated successfully");
+            System.out.println("Application deactivated successfully");
 
-		} else {
-			// Handling errors
-			System.out.println(response.errorResponse);
-		}
-	}
+        } else {
+            // Handling errors
+            System.out.println(response.errorResponse);
+        }
+    }
 }

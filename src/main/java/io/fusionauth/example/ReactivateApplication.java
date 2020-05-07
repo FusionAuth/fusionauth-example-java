@@ -9,26 +9,26 @@ import com.inversoft.rest.ClientResponse;
 
 public class ReactivateApplication {
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 
-		ApplicationProperties.setupProperties();
+        ApplicationProperties.setupProperties();
 
-		// Initiating the client
-		FusionAuthClient client = new FusionAuthClient(ApplicationProperties.getApiKey(),
-				ApplicationProperties.getFusionAuthURL());
+        // Initiating the client
+        FusionAuthClient client = new FusionAuthClient(ApplicationProperties.getApiKey(),
+                ApplicationProperties.getFusionAuthURL());
 
-		UUID appId = UUID.fromString("991001b4-d196-4204-b483-a0ed5dbf7666");
+        UUID appId = UUID.fromString("991001b4-d196-4204-b483-a0ed5dbf7666");
 
-		// Using the returned ClientResponse object
-		ClientResponse<ApplicationResponse, Errors> response = client.reactivateApplication(appId);
+        // Using the returned ClientResponse object
+        ClientResponse<ApplicationResponse, Errors> response = client.reactivateApplication(appId);
 
-		if (response.wasSuccessful()) {
-			// Outputting the application's details
-			System.out.println(response.successResponse.application);
+        if (response.wasSuccessful()) {
+            // Outputting the application's details
+            System.out.println(response.successResponse.application);
 
-		} else {
-			// Handling errors
-			System.out.println(response.errorResponse);
-		}
-	}
+        } else {
+            // Handling errors
+            System.out.println(response.errorResponse);
+        }
+    }
 }

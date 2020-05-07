@@ -9,28 +9,28 @@ import com.inversoft.rest.ClientResponse;
 
 public class UserLogin {
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 
-		ApplicationProperties.setupProperties();
+        ApplicationProperties.setupProperties();
 
-		// Initiating the client
-		FusionAuthClient client = new FusionAuthClient(ApplicationProperties.getApiKey(),
-				ApplicationProperties.getFusionAuthURL());
+        // Initiating the client
+        FusionAuthClient client = new FusionAuthClient(ApplicationProperties.getApiKey(),
+                ApplicationProperties.getFusionAuthURL());
 
-		UUID appId = UUID.fromString("1aae68ac-d4d3-4e96-b24c-c9478a309673");
-		// Creating the request object
-		LoginRequest request = new LoginRequest(appId, "fusionjava@example.com", "mypassword101");
+        UUID appId = UUID.fromString("1aae68ac-d4d3-4e96-b24c-c9478a309673");
+        // Creating the request object
+        LoginRequest request = new LoginRequest(appId, "fusionjava@example.com", "mypassword101");
 
-		// Using the returned object
-		ClientResponse<LoginResponse, Errors> response = client.login(request);
+        // Using the returned object
+        ClientResponse<LoginResponse, Errors> response = client.login(request);
 
-		if (response.wasSuccessful()) {
-			System.out.println("Login successful");
+        if (response.wasSuccessful()) {
+            System.out.println("Login successful");
 
-		} else {
-			// Handling errors
-			System.out.println(response.errorResponse);
-		}
-	}
+        } else {
+            // Handling errors
+            System.out.println(response.errorResponse);
+        }
+    }
 
 }
