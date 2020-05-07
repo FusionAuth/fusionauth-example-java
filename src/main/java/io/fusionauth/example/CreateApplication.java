@@ -11,17 +11,16 @@ public class CreateApplication {
 
 	public static void main(String[] args) {
 
-		String apiKey = "Z77y_yshOSAIfF3sd370Ns6m4VkKcAOqFpyyzSGfnF4";
-
-		String fusionauthURL = "http://localhost:9011";
+		ApplicationProperties.setupProperties();
 
 		// Initiating the client
-		FusionAuthClient client = new FusionAuthClient(apiKey, fusionauthURL);
+		FusionAuthClient client = new FusionAuthClient(ApplicationProperties.getApiKey(),
+				ApplicationProperties.getFusionAuthURL());
 
 		// Initiating the application and providing registration details
 		Application app = new Application();
 
-		app.name = "FusionJavaApp";
+		app.name = "Todo";
 
 		// Creating the request object
 		ApplicationRequest request = new ApplicationRequest(app, null);
@@ -30,11 +29,10 @@ public class CreateApplication {
 		ClientResponse<ApplicationResponse, Errors> response = client.createApplication(null, request);
 
 		if (response.wasSuccessful()) {
-			System.out.println("Registration successful");
-
+			System.out.println("Application creation successful");
 		} else {
 			// Handling errors
-			System.out.println(response.errorResponse);
+			System.out.println(response.exception);
 		}
 	}
 

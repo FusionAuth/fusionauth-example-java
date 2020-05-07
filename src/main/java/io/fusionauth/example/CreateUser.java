@@ -13,12 +13,11 @@ public class CreateUser {
 
 	public static void main(String[] args) {
 
-		String apiKey = "Z77y_yshOSAIfF3sd370Ns6m4VkKcAOqFpyyzSGfnF4";
-
-		String fusionauthURL = "http://localhost:9011";
+		ApplicationProperties.setupProperties();
 
 		// Initiating the client
-		FusionAuthClient client = new FusionAuthClient(apiKey, fusionauthURL);
+		FusionAuthClient client = new FusionAuthClient(ApplicationProperties.getApiKey(),
+				ApplicationProperties.getFusionAuthURL());
 
 		// Initiating the user and providing registration details
 		User javauser = new User();

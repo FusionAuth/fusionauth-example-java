@@ -10,14 +10,12 @@ public class ReactivateUser {
 
     public static void main(String[] args) {    
         
-        String apiKey = "Z77y_yshOSAIfF3sd370Ns6m4VkKcAOqFpyyzSGfnF4";
+		ApplicationProperties.setupProperties();
+           	 
+    	//Initiating the client
+    	FusionAuthClient client = new FusionAuthClient(ApplicationProperties.getApiKey(), ApplicationProperties.getFusionAuthURL());    
         
-        String fusionauthURL = "http://localhost:9011";
-        
-        UUID userId = UUID.fromString("c7f91df7-ed89-410b-87e7-a2b7ade9bf98");
-        
-        //Initiating the client
-        FusionAuthClient client = new FusionAuthClient(apiKey, fusionauthURL);    
+        UUID userId = UUID.fromString("c7f91df7-ed89-410b-87e7-a2b7ade9bf98"); 
         
         //Using the returned ClientResponse object
         ClientResponse<UserResponse, Errors> response = client.reactivateUser(userId);        
