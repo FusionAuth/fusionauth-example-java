@@ -5,11 +5,12 @@
   <version>0.0.1-SNAPSHOT</version>
   <name>FusionAuth-Java-Example</name>
   <description>An example of using the FusionAuth Java Client Library</description>
+  <properties><maven.compiler.source>1.8</maven.compiler.source><maven.compiler.target>1.8</maven.compiler.target></properties>
   <dependencies>
   	<dependency>
   		<groupId>io.fusionauth</groupId>
   		<artifactId>fusionauth-java-client</artifactId>
-  		<version>1.15.4</version>
+  		<version>1.36.0</version>
   	</dependency>
   </dependencies>
 </project>
