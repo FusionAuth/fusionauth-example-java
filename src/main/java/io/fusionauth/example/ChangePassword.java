@@ -26,8 +26,7 @@ public class ChangePassword {
             System.out.println("Password change successful");
 
         } else {
-            // Handling errors
-            System.out.println(response.errorResponse);
+            System.err.println(response.errorResponse);
         }
     }
 }

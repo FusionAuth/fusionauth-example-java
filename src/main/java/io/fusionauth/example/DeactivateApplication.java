@@ -26,7 +26,7 @@ public class DeactivateApplication {
 
         } else {
             // Handling errors
-            System.out.println(response.errorResponse);
+            System.err.println(response.errorResponse);
         }
     }
 }

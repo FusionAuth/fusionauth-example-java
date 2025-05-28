@@ -25,7 +25,7 @@ public class DeactivateUser {
 
         } else {
             // Handling errors
-            System.out.println(response.errorResponse);
+            System.err.println(response.errorResponse);
         }
     }
 }
