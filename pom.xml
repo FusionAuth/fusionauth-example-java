@@ -10,7 +10,7 @@
   	<dependency>
   		<groupId>io.fusionauth</groupId>
   		<artifactId>fusionauth-java-client</artifactId>
-  		<version>1.36.0</version>
+		<version>1.57.0</version>
   	</dependency>
   </dependencies>
 </project>
