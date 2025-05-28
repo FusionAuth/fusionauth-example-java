@@ -23,7 +23,7 @@ public class CreateApplication {
         app.name = "Todo";
 
         // Creating the request object
-        ApplicationRequest request = new ApplicationRequest(app, null);
+        ApplicationRequest request = new ApplicationRequest(app);
 
         // Using the returned ClientResponse object
         ClientResponse<ApplicationResponse, Errors> response = client.createApplication(null, request);
@@ -32,7 +32,7 @@ public class CreateApplication {
             System.out.println("Application creation successful");
         } else {
             // Handling errors
-            System.out.println(response.exception);
+            System.err.println(response.errorResponse);
         }
     }
 
